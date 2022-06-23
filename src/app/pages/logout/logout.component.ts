@@ -10,17 +10,19 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent implements OnInit {
   secondsToRedirect: number = 5;
+  myInterval: any;
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.authService.logout();
-    const myInterval = setInterval(() => {
-      this.secondsToRedirect--;
+    this.myInterval = setInterval(() => {
+    this.secondsToRedirect--;
       if(this.secondsToRedirect == 0){
-        clearInterval(myInterval);
         this.router.navigate(['/login']);
       }
     }, 1000);
   }
-
+  ngOnDestroy() {
+    clearInterval(this.myInterval);
+  }
 }
