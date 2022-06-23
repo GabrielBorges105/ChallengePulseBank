@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'challengePulseBank';
+  isUserLoggedIn = false;
+
+  constructor(private authService: AuthService) {}
+
+   ngOnInit() {
+      let storeData = localStorage.getItem("isUserLoggedIn");
+      if( storeData != null && storeData == "true")
+         this.isUserLoggedIn = true;
+      else
+         this.isUserLoggedIn = false;
+   }
 }
