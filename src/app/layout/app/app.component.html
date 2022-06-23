@@ -1,0 +1,42 @@
+<header class="navbarTop">
+  <img src="/assets/images/pulse-m.png" class="navbar-brand" alt="" />
+  <ul class="nav justify-content-end w-100">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/profile">Profile</a>
+    </li>
+  </ul>
+</header>
+
+<main class="wrapper">
+  <nav class="navLeft">
+    <h5 class="text-center my-4 text-light titleNavLeft">Menu</h5>
+    <ul class="menuNavigation">
+      <li class="navItem">
+        <a
+          class="navOption"
+          aria-current="page"
+          routerLink="/home"
+          routerLinkActive="active"
+        >
+          Accounts
+        </a>
+      </li>
+      <li class="navItem">
+        <a class="navOption" aria-current="page" routerLink="/transfer">
+          Transfer
+        </a>
+      </li>
+      <li class="navItem">
+        <a class="navOption" aria-current="page" routerLink="/statement">
+          Statement
+        </a>
+      </li>
+    </ul>
+    <div class="mt-5 text-center">
+      <button routerLink="/logout" class="btn btn-outline-light">Logout</button>
+    </div>
+  </nav>
+  <section class="contentPage">
+    <router-outlet></router-outlet>
+  </section>
+</main>
