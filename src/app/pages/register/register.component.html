@@ -1,0 +1,112 @@
+<div class="areaRegister">
+  <div class="container">
+    <div class="text-center">
+      <img
+        src="/assets/images/pulse-m.png"
+        class="d-inline-block mb-3"
+        alt="Pulse Logo"
+      />
+    </div>
+    <form
+      #registerForm="ngForm"
+      (ngSubmit)="onClickSubmit()"
+      class="form-signin shadow px-4 py-5 border-theme rounded"
+    >
+      <h4 class="form-signin-heading text-center mb-4">Register</h4>
+      <div class="form-group mb-3">
+        <label for="fullname" class="sr-only">Full name</label>
+        <input
+          type="text"
+          name="fullname"
+          id="fullname"
+          class="form-control mb-0"
+          [(ngModel)]="requestRegister.fullname"
+          placeholder="Full name"
+          #fullname="ngModel"
+          required
+          autofocus
+        />
+        <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)">
+          <small class="text-danger d-block" *ngIf="fullname.errors?.['required']">
+            Full name is required!
+          </small>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="username" class="sr-only">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          class="form-control mb-0"
+          [(ngModel)]="requestRegister.username"
+          placeholder="Username"
+          #username="ngModel"
+          required
+          autofocus
+        />
+        <div *ngIf="username.invalid && (username.dirty || username.touched)">
+          <small class="text-danger d-block" *ngIf="username.errors?.['required']">
+            Full name is required!
+          </small>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="inputEmail"
+          class="form-control mb-0"
+          [(ngModel)]="requestRegister.email"
+          placeholder="Username"
+          #email="ngModel"
+          email="true"
+          required
+          autofocus
+        />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <small class="text-danger d-block" *ngIf="email.errors?.['required']">
+            Email is required!
+          </small>
+          <small class="text-danger d-block" *ngIf="email.errors?.['email']">
+            Please provide a valid email!
+          </small>
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="inputPassword"
+          class="form-control mb-0"
+          [(ngModel)]="requestRegister.password"
+          #password="ngModel"
+          placeholder="Password"
+          required
+        />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <small
+            class="text-danger d-block"
+            *ngIf="password.errors?.['required']"
+          >
+            Password is required!
+          </small>
+        </div>
+      </div>
+      <div class="text-center">
+        <button
+          [disabled]="!registerForm.valid"
+          class="btn buttonTheme"
+          type="submit"
+        >
+          Sign up
+        </button>
+        <p class="my-3">
+          <span class="text-muted">Already have an account? </span> <a routerLink="/login" class="text-muted">Click here.</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
