@@ -1,0 +1,8 @@
+<div class="logoutPage container d-flex justify-content-center align-items-center flex-column">
+  <h1 class="seconds text-theme">{{ secondsToRedirect }}</h1>
+  <h3>Your session has ended!</h3>
+  <p>You will be redirected in a few seconds.</p>
+  <a [routerLink]="['/login']" class="btn buttonTheme" >
+    Return to login
+  </a>
+</div>
