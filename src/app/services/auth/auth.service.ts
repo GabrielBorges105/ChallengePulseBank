@@ -32,4 +32,15 @@ export class AuthService {
     localStorage.removeItem('isUserLoggedIn');
     localStorage.removeItem('pulse_token');
   }
+
+  isAuthenticated(): void {
+    this.httpClient.get(`${this.url}/auth/profile`).subscribe({
+      next: (res) => {
+        this.isUserLoggedIn = true;
+      },
+      error: (res) => {
+        this.isUserLoggedIn = false;
+      },
+    });
+  }
 }
