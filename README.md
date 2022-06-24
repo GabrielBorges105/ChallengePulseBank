@@ -13,6 +13,7 @@ Fictitious application called Pulse Bank that simulates some very simple banking
 - [About](#about)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Docker Image](#docker-image)
 - [How to use](#how-to-use)
 - [Technologies](#technologies)
 - [Author](#author)
@@ -25,6 +26,7 @@ Fictitious application called Pulse Bank that simulates some very simple banking
 * Check that you have the following requirements:
   - Angular CLI 
   - Node
+  - Docker
 
 ---
 
@@ -41,6 +43,17 @@ Fictitious application called Pulse Bank that simulates some very simple banking
 - Done it! In the project folder, run the following command:
   ```bash
   npm install
+  ```
+
+---
+
+<a id="docker-image"></a>
+## Docker Image
+
+- Run the following command to run an image docker
+
+  ```bash
+  docker run -d --name pulse-bank -p 8099:80 jeangabriel109/challenge-pulse-bank
   ```
 
 ---
@@ -69,6 +82,7 @@ The following tools were used in the construction of the project
 
 - [Node](https://nodejs.org/en//)
 - [Angular CLI](https://angular.io/cli)
+- [Docker](https://www.docker.com/)
 
 ---
 
