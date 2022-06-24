@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  challenge-pulse-bank:
+    image: jeangabriel109/challenge-pulse-bank
+    build: .
+    ports:
+      - 8081:80
