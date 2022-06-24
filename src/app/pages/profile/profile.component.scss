@@ -1,0 +1,18 @@
+.containerProfile {
+  border-radius: 10px;
+  padding: 20px;
+  .userIcon {
+    width: 100px;
+    height: 100px;
+  }
+  p {
+    margin: 5px 0;
+  }
+
+  .text-profile-align {
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+}
