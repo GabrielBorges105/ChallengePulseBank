@@ -4,7 +4,7 @@
 
 ## About
 
-Bank management project
+Fictitious application called Pulse Bank that simulates some very simple banking operations, such as: creating an account, transferring between accounts and viewing a simplified statement.
 
 ---
 
