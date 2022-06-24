@@ -30,7 +30,7 @@ export class TransferComponent implements OnInit {
         );
       },
       error: (res) => {
-        this.alertService.error(res.message, 'Error');
+        this.alertService.error(res.error.message, 'Error');
       },
     });
   }
