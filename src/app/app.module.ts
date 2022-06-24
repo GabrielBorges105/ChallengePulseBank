@@ -19,10 +19,11 @@ import { AuthComponent } from './layout/auth/auth.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { StatementComponent } from './pages/statement/statement.component';
+import { TransferComponent } from './pages/transfer/transfer.component';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, LogoutComponent, AuthComponent, AppLayoutComponent, RegisterComponent, ProfileComponent, StatementComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, LogoutComponent, AuthComponent, AppLayoutComponent, RegisterComponent, ProfileComponent, StatementComponent, TransferComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
