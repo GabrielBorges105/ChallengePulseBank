@@ -1,27 +1,88 @@
 # ChallengePulseBank
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+<a id="about"></a>
 
-## Development server
+## About
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Bank management project
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Table of Contents
 
-## Build
+- [About](#about)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [How to use](#how-to-use)
+- [Technologies](#technologies)
+- [Author](#author)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+<a id="requirements"></a>
+## Requirements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Check that you have the following requirements:
+  - Angular CLI 
+  - Node
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+<a id="installation"></a>
 
-## Further help
+## 🛠 Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Download Project or clone using command
+
+  ```bash
+  git clone <https://github.com/GabrielBorges105/ChallengePulseBank.git>
+  ```
+
+- Done it! In the project folder, run the following command:
+  ```bash
+  npm install
+  ```
+
+---
+
+<a id="how-to-use"></a>
+
+## 🎲 How to use
+
+To use it, you will need to follow these steps:
+
+- In the project folder, run the following command in your terminal:
+
+  ```bash
+  ng serve -o
+  ```
+
+- Navigate to `http://localhost:4200/`.
+
+---
+
+<a id="technologies"></a>
+
+## 🛠 Technologies
+
+The following tools were used in the construction of the project
+
+- [Node](https://nodejs.org/en//)
+- [Angular CLI](https://angular.io/cli)
+
+---
+
+<a id="author"></a>
+
+## Author
+
+<div style="display:flex; justify-content:center; align-items:center">
+
+<div style="width: 30%; display: inline-block">
+<a href="https://github.com/GabrielBorges105">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/GabrielBorges105" width="100px;" alt=""/>
+ <b>Jean Gabriel</b>
+ </a>
+</div>
+
+ </div>
