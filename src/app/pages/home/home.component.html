@@ -1,7 +1,114 @@
 <div>
   <div class="text-end">
-    <button class="btn buttonTheme">Add</button>
+    <button
+      class="btn buttonTheme"
+      type="button"
+      (click)="showCreateModal()"
+      data-toggle="modal"
+      data-target="#modalAdd"
+    >
+      Add
+    </button>
   </div>
+  <!-- Start Modal -->
+  <div
+    class="modal"
+    id="modalAdd"
+    tabindex="-1"
+    [ngStyle]="{ display: isOpenCreateModal ? 'block' : 'none' }"
+    role="dialog"
+    aria-labelledby="modalAddLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <form
+        #loginForm="ngForm"
+        (ngSubmit)="onClickSubmit()"
+        class="modal-content"
+      >
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAddLabel">Create Account</h5>
+          <button
+            type="button"
+            class="close btn"
+            data-dismiss="modal"
+            aria-label="Close"
+            (click)="closeCreateModal()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group mb-3">
+            <label for="inputBalance" class="sr-only">Balance</label>
+            <input
+              type="number"
+              name="balance"
+              id="inputBalance"
+              class="form-control mb-0"
+              [(ngModel)]="formAccount.balance"
+              placeholder="Balance"
+              #balance="ngModel"
+              required
+              autofocus
+            />
+            <div *ngIf="balance.invalid && (balance.dirty || balance.touched)">
+              <small
+                class="text-danger d-block"
+                *ngIf="balance.errors?.['required']"
+              >
+                Balance is required!
+              </small>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="inputNumber" class="sr-only">Number</label>
+            <input
+              type="text"
+              name="number"
+              id="inputNumber"
+              class="form-control mb-0"
+              [(ngModel)]="formAccount.number"
+              placeholder="Number"
+              #number="ngModel"
+              required
+              autofocus
+            />
+            <div *ngIf="number.invalid && (number.dirty || number.touched)">
+              <small
+                class="text-danger d-block"
+                *ngIf="number.errors?.['required']"
+              >
+                Number is required!
+              </small>
+            </div>
+          </div>
+          <hr />
+          <p class="text-center text-muted">
+            Note: Only one bank account per user is allowed
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+            (click)="closeCreateModal()"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!loginForm.valid"
+          >
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End Modal -->
   <table class="table">
     <thead>
       <tr>
@@ -12,7 +119,7 @@
     </thead>
     <tbody *ngIf="listAcounts.length > 0; else listEmpty">
       <tr *ngFor="let account of listAcounts; let i = index">
-        <th scope="row">{{ i+1 }}</th>
+        <th scope="row">{{ i + 1 }}</th>
         <td>{{ account.agency }}</td>
         <td>{{ account.number }}</td>
       </tr>
@@ -26,5 +133,4 @@
       </tr>
     </tbody>
   </ng-template>
-
 </div>
