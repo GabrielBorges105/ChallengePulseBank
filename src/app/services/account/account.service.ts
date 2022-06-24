@@ -14,4 +14,8 @@ export class AccountService {
   list(): Observable<Account[]> {
     return this.httpClient.get<Account[]>(`${this.url}/account`);
   }
+
+  create(account: Account): Observable<Account>{
+    return this.httpClient.post<Account>(`${this.url}/account`, account);
+  }
 }
