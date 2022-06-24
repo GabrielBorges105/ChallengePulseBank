@@ -18,10 +18,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './layout/auth/auth.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { StatementComponent } from './pages/statement/statement.component';
 
 registerLocaleData(localePt, 'pt');
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, LogoutComponent, AuthComponent, AppLayoutComponent, RegisterComponent, ProfileComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, LogoutComponent, AuthComponent, AppLayoutComponent, RegisterComponent, ProfileComponent, StatementComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

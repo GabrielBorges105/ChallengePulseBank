@@ -1,0 +1,40 @@
+<div>
+  <div class="mt-3 mb-5">
+    <h4 class="text-theme mb-2">Your account</h4>
+    <p class="m-0 mb-1"><strong>Agency:</strong> {{ statement.agency }}</p>
+    <p class="m-0 mb-1"><strong>Number:</strong> {{ statement.number }}</p>
+    <p class="m-0 mb-1"><strong>Balance:</strong> {{ statement.balance | currency }}</p>
+  </div>
+    <h4 class="text-theme mb-2">Movements</h4>
+    <table class="table mt-3 mb-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Value</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody
+      *ngIf="
+        statement.movements && statement.movements.length > 0;
+        else listEmpty
+      "
+    >
+      <tr *ngFor="let movement of statement.movements; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ movement.type }}</td>
+        <td>{{ movement.total | currency }}</td>
+        <td>{{ movement.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #listEmpty>
+    <tbody>
+      <tr>
+        <td colspan="4">No bank transactions</td>
+      </tr>
+    </tbody>
+  </ng-template>
+</div>
