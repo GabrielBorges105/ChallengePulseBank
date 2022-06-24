@@ -1,3 +1,4 @@
+import { StatementComponent } from './pages/statement/statement.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthComponent } from './layout/auth/auth.component';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'statement', component: StatementComponent },
     ],
   },
   {
