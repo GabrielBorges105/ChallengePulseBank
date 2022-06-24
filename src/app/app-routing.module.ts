@@ -1,3 +1,4 @@
+import { TransferComponent } from './pages/transfer/transfer.component';
 import { StatementComponent } from './pages/statement/statement.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthComponent } from './layout/auth/auth.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'transfer', component: TransferComponent },
       { path: 'statement', component: StatementComponent },
     ],
   },
